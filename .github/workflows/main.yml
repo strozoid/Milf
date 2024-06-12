@@ -21,7 +21,7 @@ jobs:
         run: |
           # Download H images
           curl -s https://api.waifu.im/search?included_tags=milf | jq -r '.images[0].url' > milf_url.txt
-          img_url=$(cat hentai_url.txt)
+          img_url=$(cat milf_url.txt)
           img_name=$(basename $img_url)
           curl -s -o pics/$img_name $img_url
 
