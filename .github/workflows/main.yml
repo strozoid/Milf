@@ -38,7 +38,7 @@ jobs:
           rm -f milf_url.txt
           git config --local user.email "${{ secrets.EMAIL }}"
           git config --local user.name "strozoid"
-          git add -A
+          git add pics/
           
           git commit -m "Commit Milf"
           
