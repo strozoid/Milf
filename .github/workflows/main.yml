@@ -25,13 +25,13 @@ jobs:
           img_name=$(basename $img_url)
           curl -s -o pics/$img_name $img_url
 
-      - name: Set date variable
-        run: |
-          echo "date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+      # - name: Set date variable
+      #   run: |
+      #     echo "date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
           
-      - name: Write into Schedule
-        run: |
-          echo $date > Schedule
+      # - name: Write into Schedule
+      #   run: |
+      #     echo $date > Schedule
           
       - name: Commit Changes & rm .txt
         run: |
