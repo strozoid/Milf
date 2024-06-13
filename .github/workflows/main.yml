@@ -25,22 +25,20 @@ jobs:
           img_name=$(basename $img_url)
           curl -s -o pics/$img_name $img_url
 
-      # - name: Set date variable
-      #   run: |
-      #     echo "date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
-          
-      # - name: Write into Schedule
-      #   run: |
-      #     echo $date > Schedule
+      - name: Set date variable
+        run: |
+          echo "date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
           
       - name: Commit Changes & rm .txt
         run: |
           rm -f milf_url.txt
           git config --local user.email "${{ secrets.EMAIL }}"
           git config --local user.name "strozoid"
-          git add pics/
+          git add -A
+          echo $date > Schedule
           
           git commit -m "Commit Milf"
+          
           
       - name: GitHub Push
         uses: ad-m/github-push-action@master
