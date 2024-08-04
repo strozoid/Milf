@@ -6,8 +6,8 @@ on:
       - main
   workflow_dispatch:
   
-  schedule:
-    - cron: "1 0,12 * * *"
+  # schedule:
+  #   - cron: "1 0,12 * * *"
 
 jobs:
   auto_commit:
